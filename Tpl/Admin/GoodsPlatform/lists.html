@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>{$CONF['mallTitle']}后台管理中心</title>
+      <link href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="__CSS__/AdminLTE.css" rel="stylesheet" type="text/css" />
+      <!--[if lt IE 9]>
+      <script src="__PUBLIC__/js/html5shiv.min.js"></script>
+      <script src="__PUBLIC__/js/respond.min.js"></script>
+      <![endif]-->
+      <script src="__PUBLIC__/js/jquery.min.js"></script>
+      <script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
+      <script src="__PUBLIC__/js/common.js"></script>
+      <script src="__PUBLIC__/plugins/plugins/plugins.js"></script>
+      <style type="text/css">
+		#preview{border:1px solid #cccccc; background:#CCC;color:#fff; padding:5px; display:none; position:absolute;}
+	  </style>
+   </head>
+   <script>
+   function checkAll(obj){
+      $('.chk').each(function(){
+        $(this)[0].checked = obj;
+      })
+    }
+   function del(id){
+	   Plugins.confirm({title:'信息提示',content:'您确定要删除该商品吗?',okText:'确定',cancelText:'取消',okFun:function(){
+		   Plugins.closeWindow();
+		   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+		   $.post("{:U('Admin/GoodsPlatform/delGoods')}",{id:id},function(data,textStatus){
+				var json = WST.toJson(data);
+				if(json.status=='1'){
+					Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000,callback:function(){
+					    location.reload();
+					}});
+				}else{
+					Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+				}
+			});
+		    return false;
+	   }});
+   }
+   //批量删除
+   function BatchDelete()
+    {
+        var params = {};
+        params.id = '';
+        $('input[num="list"]:checked').each(function(i,item){
+            params.id += $(this).attr('id')+',';
+        });
+        Plugins.confirm({title:'信息提示',content:'您确定要删除这些平台商品吗?',okText:'确定',cancelText:'取消',okFun:function(){
+            Plugins.closeWindow();
+            Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+            $.post("{:U('Admin/GoodsPlatform/deletes')}",params,function(data,textStatus){
+                var json = WST.toJson(data);console.log(json);
+                if(json.status=='1'){
+                    Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000,callback:function(){
+                        location.reload();
+                    }});
+                }else{
+                    Plugins.closeWindow();
+                    parent.showMsg({msg:'操作失败!',status:'danger'});
+                }
+            });
+        }});
+    }
+  //批量同步
+   function BatchSynchro(status)
+    {
+        var params = {};
+        params.id = '';
+        $('input[num="list"]:checked').each(function(i,item){
+            params.id += $(this).attr('id')+',';
+        });
+        params.status = status;
+        Plugins.confirm({title:'信息提示',content:'您确定要操作这些平台商品吗?',okText:'确定',cancelText:'取消',okFun:function(){
+            Plugins.closeWindow();
+            Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+            $.post("{:U('Admin/GoodsPlatform/synchros')}",params,function(data,textStatus){
+                var json = WST.toJson(data);console.log(json);
+                if(json.status=='1'){
+                    Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000,callback:function(){
+                        location.reload();
+                    }});
+                }else{
+                    Plugins.closeWindow();
+                    parent.showMsg({msg:'操作失败!',status:'danger'});
+                }
+            });
+        }});
+    }
+    function toggleIsShow(t,v){
+       Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+       $.post("{:U('Admin/GoodsPlatform/editiIsSynchro')}",{id:v,isShow:t},function(data,textStatus){
+            var json = WST.toJson(data);
+            if(json.status=='1'){
+                Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000,callback:function(){
+                    location.reload();
+                }});
+            }else{
+                Plugins.closeWindow();
+                Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+            }
+       });
+   }
+   $.fn.imagePreview = function(options){
+		var defaults = {}; 
+		var opts = $.extend(defaults, options);
+		var t = this;
+		xOffset = 5;
+		yOffset = 20;
+		if(!$('#preview')[0])$("body").append("<div id='preview'><img width='200' src=''/></div>");
+		$(this).hover(function(e){
+			   $('#preview img').attr('src',"__ROOT__/"+$(this).attr('img'));      
+			   $("#preview").css("top",(e.pageY - xOffset) + "px").css("left",(e.pageX + yOffset) + "px").show();      
+		  },
+		  function(){
+			$("#preview").hide();
+		}); 
+		$(this).mousemove(function(e){
+			   $("#preview").css("top",(e.pageY - xOffset) + "px").css("left",(e.pageX + yOffset) + "px");
+		});
+	}
+
+   /*$(document).ready(function(){
+	    $('.imgPreview').imagePreview();
+	    <notempty name='areaId1'>
+		   getAreaList("areaId2",'{$areaId1}',0,'{$areaId2}');
+		</notempty>
+		<if condition="$goodsCatId1  neq 0 ">
+		getCatList("goodsCatId2",{$goodsCatId1},0,{$goodsCatId2});
+		</if>
+		<if condition="$goodsCatId2 neq 0 ">
+		getCatList("goodsCatId3",{$goodsCatId2},1,{$goodsCatId3});
+		</if>
+   });*/
+   </script>
+   <body class='wst-page'>
+    <form method='post' action='{:U("Admin/GoodsPlatform/goods")}' >
+       <div class='wst-tbar'> 
+   </div>
+   <div class='wst-tbar'>            
+       <!--商品分类：
+                    <select id='shopCatId1' name='shopCatId1' autocomplete="off"  style="margin-right: 20px;">
+                        <option value='0' 
+                            <if condition="$data.isHandle == -1 ">selected</if>
+                            >全部
+                        </option>
+                        <volist name="shopCatId1" id="vo">
+				           <option value='{$vo['catId']}' <if condition="$shopCatId == $vo['catId'] ">selected</if>
+				           onclick='javascript:queryPlatformByPage()'>{$vo['catName']}</option>
+				        </volist>
+
+                    </select>  -->
+       商品名称：<input type='text' id='goodsName' name='goodsName' value='{$goodsName}'/> 
+       <!--商品编号：<input type='text' id='goodsSn' name='goodsSn' value='{$goodsSn}'/> -->
+  <button type="submit" class="btn btn-primary glyphicon glyphicon-search">查询</button>
+  <a class="btn btn-success glyphicon glyphicon-plus" href="/index.php?m=Admin&amp;c=GoodsPlatform&amp;a=toAdd" style="float:right">新增</a>
+   </div>
+       </form>
+       <div class='wst-body'>
+        <table class="table table-hover table-striped table-bordered wst-list">
+           <thead>
+             <tr>
+              <th width='30' style="text-align: center">序号</th>
+               <th width='180'>商品名称</th>
+               <!--<th width='60'>商品编号</th>-->
+               <!--<th width='60' style="text-align:center">200万以上</th>
+               <th width='60' style="text-align:center">500分以上</th>-->
+                 <volist name="catList" id="vo">
+                     <th width="60" style="text-align: center">{$vo['points_name']}</th>
+                 </volist>
+                 <?php $count = count($catList)?>
+               <!--<th width='60' style="text-align:center">价格</th>-->
+               <!--<th width='25'>销量</th>-->
+			 	<!--<th width='60'>同步到商户</th>-->
+               <th width='80' style="text-align: center">操作</th>
+             </tr>
+           </thead>
+           <tbody>
+            <volist name="Page['root']" id="vo" key='k'>
+             <tr >
+              <td style="text-align: center">
+                  <!--<input type='checkbox' class='chk' name="id[]" num="list" id='{$vo['goodsId']}'/>-->
+                  {$k}
+              </td>
+               <td img='' class='imgPreview'>
+               <!--<img src='__ROOT__/{$vo['goodsThums']}' width='50'/>-->
+               {$vo['goodsName']}
+               </td>
+               <?php for($i=0;$i<$count;$i++){
+                      $ii=$i+1;
+                      echo "<td style='text-align:center'>",$vo["p"][$i]*100,"%</td>";
+                    }
+               ?>
+                        <!--<td style="text-align: center"><?php echo $count; ?></td>-->
+
+
+               <!--<td style="text-align: center">{$vo['shopPrice']}&nbsp;</td>-->
+               <!--<td>
+               <div class="dropdown">
+               <if condition="$vo['isSynchro']==0 ">
+                   <button class="btn btn-danger dropdown-toggle wst-btn-dropdown"  type="button" data-toggle="dropdown">
+					     不同步
+					  <span class="caret"></span>
+				   </button>
+               <else/>
+                   <button class="btn btn-success dropdown-toggle wst-btn-dropdown" type="button" data-toggle="dropdown">
+					     同步
+					  <span class="caret"></span>
+				   </button>
+               </if>
+                   <ul class="dropdown-menu" role="menu">
+					  <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:toggleIsShow(1,{$vo['goodsId']})">同步</a></li>
+					  <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:toggleIsShow(0,{$vo['goodsId']})">不同步</a></li>
+				   </ul>
+               </div>
+               </td>-->
+               <td style="text-align: center">
+              
+              
+              <a class="btn btn-default glyphicon glyphicon-pencil" href="{:U('Admin/GoodsPlatform/toAdd',array('id'=>$vo['goodsId']))}">修改</a>&nbsp;
+	          
+	               <a class="btn btn-default glyphicon glyphicon-trash" onclick="javascript:del({$vo['goodsId']},0)">刪除</a>
+	           
+	               </td>
+               
+               </td>
+             </tr>
+             </volist>
+              <tr>
+           <!-- <td colspan='8'>
+                <input type='checkbox' name='chk' onclick='javascript:checkAll(this.checked)'/>全选
+                <input type="button" onclick="javascript:BatchDelete()" value="批量删除"/>
+                <input type="button" onclick="javascript:BatchSynchro(1)" value="批量同步"/>
+                <input type="button" onclick="javascript:BatchSynchro(0)" value="批量不同步"/>
+            </td>-->
+        </tr>
+             <tr>
+                <td colspan='10' align='center'>{$Page['pager']}</td>
+             </tr>
+           </tbody>
+        </table>
+       </div>
+   </body>
+</html>

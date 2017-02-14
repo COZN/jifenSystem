@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{$CONF['mallTitle']}后台管理中心</title>
+    <link href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__CSS__/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="__PUBLIC__/js/html5shiv.min.js"></script>
+    <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/plugins/plugins/plugins.js"></script>
+</head>
+<script>
+    function del(id){
+        Plugins.confirm({title:'信息提示',content:'您确定要删除该用户吗?',okText:'确定',cancelText:'取消',okFun:function(){
+            Plugins.closeWindow();
+            Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+            $.post("{:U('Admin/ApplyLimit/delUser')}",{id:id},function(data,textStatus){
+                var json = WST.toJson(data);
+                if(json.status=='1'){
+                    Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000,callback:function(){
+                        location.reload();
+                    }});
+                }else{
+                    Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+                }
+            });
+            return false;
+        }});
+    }
+</script>
+<body class='wst-page'>
+<div class='wst-tbar' style='height:40px;'>
+        积分上限名称：{$applyLimit['limit_name']}<br />
+        积分上限名称：{$applyLimit['limit_value']}
+    <div style="float:right">
+    <php>if(in_array('fxsx_05',$WST_STAFF['grant'])){</php>
+        <a class="btn btn-success glyphicon glyphicon-plus" href="{:U('Admin/ApplyLimit/toEditUser',array('limit_id'=>$applyLimit['id']))}">新增</a>
+        <a class="btn btn-primary" onclick='javascript:location.href="{$referer}"'>返回</a>
+    <php>}</php>
+    </div>
+</div>
+<div class='wst-body'>
+    <table class="table table-hover table-striped table-bordered wst-list">
+        <thead>
+        <tr>
+            <th width="5%">序号</th>
+            <th width="20%">会员名称</th>
+            <th width='20%'>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="Page['root']" id="vo" key='i'>
+            <tr id='tr_0_{$i}' class="tr_0" isLoad='1'>
+                <td width="50">{$i}</td>
+                <td>{$vo['loginName']}</td>
+                <td>
+                    <a class="btn btn-default glyphicon glyphicon-trash" onclick="javascript:del({$vo['userId']})">刪除</a>
+                </td>
+            </tr>
+        </volist>
+        <tr>
+            <td colspan='11' align='center'>{$List['pager']}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

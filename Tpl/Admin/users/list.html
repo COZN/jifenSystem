@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>{$CONF['mallTitle']}后台管理中心</title>
+      <link href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="__CSS__/AdminLTE.css" rel="stylesheet" type="text/css" />
+      <!--[if lt IE 9]>
+      <script src="__PUBLIC__/js/html5shiv.min.js"></script>
+      <script src="__PUBLIC__/js/respond.min.js"></script>
+      <![endif]-->
+      <script src="__PUBLIC__/js/jquery.min.js"></script>
+      <script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
+      <script src="__PUBLIC__/js/common.js"></script>
+      <script src="__PUBLIC__/plugins/plugins/plugins.js"></script>
+   </head>
+   <script>
+   function del(id,type){
+	   var msg = (type==1)?'该会员为商家会员，您确定要删除该商家信息吗？':'您确定要删除该会员信息吗?';
+	   Plugins.confirm({title:'信息提示',content:msg,okText:'确定',cancelText:'取消',okFun:function(){
+		   Plugins.closeWindow();
+		   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+		   $.post("{:U('Admin/Users/del')}",{id:id},function(data,textStatus){
+					var json = WST.toJson(data);
+					if(json.status=='1'){
+						Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000,callback:function(){
+						   location.reload();
+						}});
+					}else{
+						Plugins.closeWindow();
+						Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+					}
+				});
+	   }});
+   }
+   function balance(userid)
+   {
+    var info = {};
+           info.userid = userid;
+           //info.isBiz = isBiz;
+           var data = JSON.stringify(info);
+           location.href="__CONTROLLER__/balance/data/"+data;
+      //var msg = (isBiz==0)?'该会员为普通会员,您确定要查询余额吗？':'该会员是商家不能查询余额信息';
+      /* Plugins.confirm({title:'信息提示',content:"您确定要查看该会员的余额吗？",okText:'确定',cancelText:'取消',okFun:function(){
+           var info = {};
+           info.userid = userid;
+           //info.isBiz = isBiz;
+           var data = JSON.stringify(info);
+           location.href="__CONTROLLER__/balance/data/"+data;
+       }});*/
+   }
+   </script>
+   <body class='wst-page'>
+    <form method='post' action='{:U("Admin/Users/index")}'>
+       <div class='wst-tbar'>
+       会员账号：<input type='text' id='loginName' name='loginName' class='form-control wst-ipt-10' value='{$loginName}'/>
+  <button type="submit" class="btn btn-primary glyphicon glyphicon-search">查询</button> 
+  <!--
+  <php>if(in_array('hylb_01',$WST_STAFF['grant'])){</php>
+       <a class="btn btn-success glyphicon glyphicon-plus" href='{:U("Admin/Users/toEdit")}' style='float:right'>新增</a>
+  <php>}</php>     
+  -->
+       </div>
+       </form>
+       <div class="wst-body">
+        <table class="table table-hover table-striped table-bordered wst-list">
+           <thead>
+             <tr>
+               <th width='30'>序号</th>
+               <th width='60'>会员账号</th>
+               <th width='110'>累积总积分</th>
+               <th width='110'>返利总金额</th>
+               <!--<th width='130'>操作</th>-->
+             </tr>
+           </thead>
+           <tbody>
+            <volist name="Page['root']" id="vo" key='i'>
+             <tr>
+               <td>{$i}</td>
+               <td>{$vo['loginName']}</td>
+               <td>{$vo['userTotalScore']}</td>
+               <td>{$vo['userTotalMoney']}</td>
+               <!--
+               <td>
+               <php>if(in_array('hylb_02',$WST_STAFF['grant'])){</php>
+               <a class="btn btn-default glyphicon glyphicon-pencil" href="{:U('Admin/Users/toEdit',array('id'=>$vo['userId']))}">修改</a>&nbsp;
+               <php>}</php>
+               <php>if(in_array('hylb_03',$WST_STAFF['grant'])){</php>
+               <button type="button" class="btn btn-default glyphicon glyphicon-trash" onclick="javascript:del({$vo['userId']},{$vo['userType']})">刪除</buttona>&nbsp;
+               <php>}</php>
+               </td>
+               -->
+             </tr>
+             </volist>
+             <tr>
+                <td colspan='11' align='center'>{$Page['pager']}</td>
+             </tr>
+           </tbody>
+        </table>
+       </div>
+   </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>{$CONF['mallTitle']}后台管理中心</title>
+      <link href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="__CSS__/AdminLTE.css" rel="stylesheet" type="text/css" />
+      <!--[if lt IE 9]>
+      <script src="__PUBLIC__/js/html5shiv.min.js"></script>
+      <script src="__PUBLIC__/js/respond.min.js"></script>
+      <![endif]-->
+      <script src="__PUBLIC__/js/jquery.min.js"></script>
+      <script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
+      <script src="__PUBLIC__/js/common.js"></script>
+      <script src="__PUBLIC__/plugins/plugins/plugins.js"></script>
+   </head>
+   <body class='wst-page'>
+       <div class='wst-tbar' style='height:25px;'>
+        <table style="float:left">
+          <tr>
+            <td>当次总积分：</td>
+            <td>{$Page['totalScore']}</td>
+          </tr>
+            <tr>
+            <td>当次返现：</td>
+            <td>{$Page['cashBack']}</td>
+          </tr>
+        </table>
+        <button style="float:right;" type="button" class="btn btn-primary" onclick='javascript:location.href="{$referer}"'>返&nbsp;回</button>
+       </div>
+       <div class="wst-body"> 
+        <table class="table table-hover table-striped table-bordered wst-list">
+           <thead>
+             <tr>
+               <th width='40'><label>序号</label></th>
+               <th width="100">商品名称</th>
+               <th width="100">当次积分</th>
+               <th width="100">累积积分</th>
+               <th width="100">返现比例</th>
+               <th width='100'>返现金额</th>
+             </tr>
+           </thead>
+           <tbody>
+            <volist name="Page['goods']" id="vo" key='i'>
+             <tr>
+               <td>{$i}</td>
+               <td>{$vo['goodsName']}</td>
+               <td>{$vo['activeScore']}</td>
+               <td>{$vo['score']}</td>
+               <td>{$vo['proportion']}</td>
+               <td>{$vo['cashBack']}</td>
+             </tr>
+             </volist>
+           </tbody>
+        </table>
+       </div>
+   </body>
+</html>
