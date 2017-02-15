@@ -51,8 +51,10 @@ class ApplyLimitModel extends BaseModel {
         $id = (int)I('id',0);
         if($id == 0){return $rd;}
         $rs = $m->where('id = '.$id)->setField('is_del',1);
-        //删除这期下的所有申请
         if($rs){
+            //恢复用户返现上限为默认
+            $m = M('Users');
+            $m->where('limit_id = '.$id)->setField('limit_id',0);
             $rd['status'] = 1;
         }
         return $rd;

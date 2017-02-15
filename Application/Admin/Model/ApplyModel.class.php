@@ -33,7 +33,7 @@ class ApplyModel extends BaseModel {
             $loginName = trim($sheet->getCell('A'.$row)->getValue());
             if($loginName=='')break;//如果某一行第一列为空则停止导入
             //获取会员id
-            $userData = $userModel->where("loginName = '".$loginName."'")->field('userId,blacklist')->find();
+            $userData = $userModel->where("loginName = '".$loginName."'")->field('userId,blacklist,limit_id')->find();
             //判断会员是否被拉黑
             if($dataType == 1){
                 if($userData['blacklist'] == 1){$blackName[] = $loginName;continue;}
@@ -105,6 +105,16 @@ class ApplyModel extends BaseModel {
                 $data['createTime'] = $time;
                 $userId = $userModel->add($data);
             }
+            //获取返现上限
+            $applyLimitModel = M('ApplyLimit');
+            if($userData['limit_id'] > 0){
+                $limit_value = $applyLimitModel->where('id = '.$userData['limit_id'].' and is_del = 0 and limit_flag = 0')->getField('limit_value');
+            }else{
+                $limit_value = $applyLimitModel->where('is_del = 0 and limit_flag = 1')->getField('limit_value');
+            }
+            //获取累积提现金额
+            $sumCashBack = $applyModel->where('userId = '.$userId.' and activePhase = '.$activePhase)->sum('cashBack');
+            $money = ($limit_value-$sumCashBack)>$money?$money:($limit_value-$sumCashBack);
     		//增加提现申请
             if($userId){
                 $apply = array();
@@ -160,7 +170,7 @@ class ApplyModel extends BaseModel {
         if(0 == $orderType){
             $sql .= " order by a.createTime desc ";
         }else if(1 == $orderType){
-            $sql .= "  order by a.activePhase,a.userId,a.dataType";
+            $sql .= " order by a.activePhase,a.userId,a.dataType";
         }
         $page = $m->pageQuery($sql);
         $arr = $m->query($sql);
@@ -319,7 +329,8 @@ class ApplyModel extends BaseModel {
         $users = array();
         $users['loginName'] = trim(I('loginName'));
         $userModel = M('Users');
-        $userId = $userModel->where("loginName = '".$users['loginName']."'")->getField('userId');
+        $userData = $userModel->where("loginName = '".$users['loginName']."'")->field('userId,limit_id')->find();
+        $userId = $userData['userId'];
         //计算总积分
         $sumScore = 0;
         foreach($allGoods as $k=>$v){
@@ -358,7 +369,7 @@ class ApplyModel extends BaseModel {
             //积分不能为负数
             if($goodsScore < 0){
                 $goodsName = M('GoodsPlatform')->where('goodsId = '.$goodsId)->getField('goodsName');
-                $rd['goodsName'] = $goodsName[0];
+                $rd['goodsName'] = $goodsName;
                 $rd['status'] = -3;
                 return $rd;
             }
@@ -372,6 +383,17 @@ class ApplyModel extends BaseModel {
             $data['createTime'] = $time;
             $userId = $userModel->add($data);
         }
+        //获取返现上限
+        $applyLimitModel = M('ApplyLimit');
+        if($userData['limit_id'] > 0){
+            $limit_value = $applyLimitModel->where('id = '.$userData['limit_id'].' and is_del = 0 and limit_flag = 0')->getField('limit_value');
+        }else{
+            $limit_value = $applyLimitModel->where('is_del = 0 and limit_flag = 1')->getField('limit_value');
+        }
+        //获取累积提现金额
+        $sumCashBack = $applyModel->where('userId = '.$userId.' and activePhase = '.$activePhase)->sum('cashBack');
+        $money = ($limit_value-$sumCashBack)>$money?$money:($limit_value-$sumCashBack);
+
         //增加提现申请
         if($userId){
             $apply['userId'] = $userId;

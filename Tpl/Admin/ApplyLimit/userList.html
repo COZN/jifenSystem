@@ -38,7 +38,7 @@
 <body class='wst-page'>
 <div class='wst-tbar' style='height:40px;'>
         积分上限名称：{$applyLimit['limit_name']}<br />
-        积分上限名称：{$applyLimit['limit_value']}
+        积分上限数值：{$applyLimit['limit_value']}
     <div style="float:right">
     <php>if(in_array('fxsx_05',$WST_STAFF['grant'])){</php>
         <a class="btn btn-success glyphicon glyphicon-plus" href="{:U('Admin/ApplyLimit/toEditUser',array('limit_id'=>$applyLimit['id']))}">新增</a>

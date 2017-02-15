@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c72451b4-8f3a-4e51-a67d-602eb8c3ea55" name="Default" comment="" />
+    <list default="true" id="c72451b4-8f3a-4e51-a67d-602eb8c3ea55" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/6be7506450b96346a0e97e586e7a169e.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/6be7506450b96346a0e97e586e7a169e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/f5c2b0191697ae5970503b2de590ef66.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/f5c2b0191697ae5970503b2de590ef66.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Data/CRON_CONFIG.php" afterPath="$PROJECT_DIR$/Runtime/Data/CRON_CONFIG.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html" afterPath="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/userList.html" afterPath="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/userList.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,26 +24,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ApplyController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ApplyController.class.php">
+      <file leaf-file-name="ApplyLimitModel.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-675">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="360">
+              <caret line="52" column="59" lean-forward="true" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
+              <folding>
+                <marker date="1487130572760" expanded="true" signature="170:222" ph="select * fro... " />
+                <marker date="1487130572760" expanded="true" signature="1764:1794" ph="select * fro... " />
+                <marker date="1487130572760" expanded="true" signature="1764:1810" ph="select * fro... " />
+                <marker date="1487130572760" expanded="true" signature="1764:1811" ph="select * fro... " />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplyModel.class.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php">
+      <file leaf-file-name="limitList.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="347" column="23" lean-forward="false" selection-start-line="347" selection-start-column="12" selection-end-line="347" selection-end-column="23" />
-              <folding>
-                <marker date="1477731616000" expanded="true" signature="6596:6837" ph="select a.app... " />
-                <marker date="1477731616000" expanded="true" signature="12694:12830" ph="select a.*,u... " />
-                <marker date="1477731616000" expanded="true" signature="17098:17228" ph="select apply... " />
-              </folding>
+            <state relative-caret-position="300">
+              <caret line="20" column="74" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,7 +63,13 @@
       <find>queryUserByPage</find>
       <find>del</find>
       <find>userList</find>
+      <find>datatype</find>
+      <find>getfield</find>
+      <find>getfieldfi</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -65,12 +81,14 @@
         <option value="$PROJECT_DIR$/Tpl/Admin/index.html" />
         <option value="$PROJECT_DIR$/Tpl/Admin/roles/edit.html" />
         <option value="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/editLimit.html" />
-        <option value="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html" />
         <option value="$PROJECT_DIR$/Tpl/Admin/js/shopcom.js" />
         <option value="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/editUser.html" />
-        <option value="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/userList.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/ApplyLimitController.class.php" />
+        <option value="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/userList.html" />
+        <option value="$PROJECT_DIR$/Tpl/Admin/Apply/handInput.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php" />
+        <option value="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html" />
       </list>
     </option>
   </component>
@@ -102,7 +120,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -180,7 +197,29 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="ApplyLimit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jifen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jifen" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Apply" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -262,6 +301,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,23 +378,23 @@
       <option name="presentableId" value="Default" />
       <updated>1486956337219</updated>
       <workItem from="1486956339184" duration="18275000" />
-      <workItem from="1487035436899" duration="5455000" />
+      <workItem from="1487035436899" duration="6071000" />
+      <workItem from="1487123328249" duration="7695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23730000" />
+    <option name="totallyTimeSpent" value="32041000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25321338" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25642672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -364,6 +404,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -418,7 +459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="186" column="21" lean-forward="false" selection-start-line="186" selection-start-column="21" selection-end-line="186" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -433,7 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-959">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -571,26 +610,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="64" column="103" lean-forward="false" selection-start-line="64" selection-start-column="95" selection-end-line="64" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tpl/Admin/Apply/view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="40" lean-forward="true" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tpl/Admin/Apply/record.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="155" column="12" lean-forward="false" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -598,36 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="743">
           <caret line="446" column="5" lean-forward="true" selection-start-line="446" selection-start-column="5" selection-end-line="446" selection-end-column="5" />
-          <folding>
-            <marker date="1487037166587" expanded="true" signature="14879:14895" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="17690:17717" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="17817:17827" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="18232:18238" ph=" " />
-            <marker date="1487037166587" expanded="true" signature="18238:18244" ph=" " />
-            <marker date="1487037166587" expanded="true" signature="27708:27717" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="29212:29286" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="29565:29656" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="30144:30161" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="30280:30349" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="30485:30554" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="30702:30771" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="30920:30989" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="31142:31211" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="31326:31395" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="40548:40554" ph=" " />
-            <marker date="1487037166587" expanded="true" signature="41149:41173" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="46943:46949" ph=" " />
-            <marker date="1487037166587" expanded="true" signature="47015:47055" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="47154:47165" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="47297:47312" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="47565:47571" ph=" " />
-            <marker date="1487037166587" expanded="true" signature="47888:47894" ph=" " />
-            <marker date="1487037166587" expanded="true" signature="47901:47907" ph=" " />
-            <marker date="1487037166587" expanded="true" signature="47968:47992" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="48091:48102" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="48234:48249" ph="..." />
-            <marker date="1487037166587" expanded="true" signature="48413:48419" ph=" " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -649,26 +642,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tpl/Admin/ApplyLimit/userList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tpl/Admin/ApplyLimit/editUser.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="39" column="96" lean-forward="false" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2891#2897#0" expanded="true" />
-            <element signature="e#2989#2995#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,28 +665,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php">
+    <entry file="file://$PROJECT_DIR$/Tpl/Admin/ApplyLimit/userList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="100" column="24" lean-forward="false" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
+        <state relative-caret-position="360">
+          <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
           <folding>
-            <marker date="1487039149202" expanded="true" signature="170:222" ph="select * fro... " />
-            <marker date="1487039149202" expanded="true" signature="1664:1694" ph="select * fro... " />
-            <marker date="1487039149202" expanded="true" signature="1664:1710" ph="select * fro... " />
-            <marker date="1487039149202" expanded="true" signature="1664:1711" ph="select * fro... " />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Admin/Apply/handInput.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="47" column="38" lean-forward="true" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="347" column="23" lean-forward="false" selection-start-line="347" selection-start-column="12" selection-end-line="347" selection-end-column="23" />
+        <state relative-caret-position="-450">
+          <caret line="172" column="64" lean-forward="true" selection-start-line="172" selection-start-column="54" selection-end-line="172" selection-end-column="64" />
           <folding>
-            <marker date="1477731616000" expanded="true" signature="6596:6837" ph="select a.app... " />
-            <marker date="1477731616000" expanded="true" signature="12694:12830" ph="select a.*,u... " />
-            <marker date="1477731616000" expanded="true" signature="17098:17228" ph="select apply... " />
+            <marker date="1487129102908" expanded="true" signature="7248:7489" ph="select a.app... " />
+            <marker date="1487129102908" expanded="true" signature="13345:13481" ph="select a.*,u... " />
+            <marker date="1487129102908" expanded="true" signature="18405:18535" ph="select apply... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="52" column="59" lean-forward="true" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
+          <folding>
+            <marker date="1487130572760" expanded="true" signature="170:222" ph="select * fro... " />
+            <marker date="1487130572760" expanded="true" signature="1764:1794" ph="select * fro... " />
+            <marker date="1487130572760" expanded="true" signature="1764:1810" ph="select * fro... " />
+            <marker date="1487130572760" expanded="true" signature="1764:1811" ph="select * fro... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Admin/Apply/record.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="196" column="40" lean-forward="true" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="74" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>
