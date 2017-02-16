@@ -102,7 +102,8 @@ class ApplyLimitModel extends BaseModel {
         $rd = array('status'=>-1);
         $m = M('Users');
         $id = (int)I('id');
-        $data['limit_id'] = 0;
+        //查找默认返现上限id
+        $data['limit_id'] = M('ApplyLimit')->where('is_del = 0 and limit_flag = 1')->getField('id');
         $rs = $m->where("userId=$id")->save($data);
         if(false !== $rs){
             $rd['status']= 1;

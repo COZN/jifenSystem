@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c72451b4-8f3a-4e51-a67d-602eb8c3ea55" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/6be7506450b96346a0e97e586e7a169e.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/6be7506450b96346a0e97e586e7a169e.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/f5c2b0191697ae5970503b2de590ef66.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/f5c2b0191697ae5970503b2de590ef66.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Data/CRON_CONFIG.php" afterPath="$PROJECT_DIR$/Runtime/Data/CRON_CONFIG.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html" afterPath="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/userList.html" afterPath="$PROJECT_DIR$/Tpl/Admin/ApplyLimit/userList.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,33 +17,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ApplyLimitModel.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="52" column="59" lean-forward="true" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
-              <folding>
-                <marker date="1487130572760" expanded="true" signature="170:222" ph="select * fro... " />
-                <marker date="1487130572760" expanded="true" signature="1764:1794" ph="select * fro... " />
-                <marker date="1487130572760" expanded="true" signature="1764:1810" ph="select * fro... " />
-                <marker date="1487130572760" expanded="true" signature="1764:1811" ph="select * fro... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="limitList.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="74" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -121,6 +89,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,12 +270,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/lihuobao/api" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RunManager">
@@ -379,18 +347,19 @@
       <updated>1486956337219</updated>
       <workItem from="1486956339184" duration="18275000" />
       <workItem from="1487035436899" duration="6071000" />
-      <workItem from="1487123328249" duration="7695000" />
+      <workItem from="1487123328249" duration="9720000" />
+      <workItem from="1487151798772" duration="381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32041000" />
+    <option name="totallyTimeSpent" value="34447000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25642672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2596401" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -420,6 +389,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1487129102908" expanded="true" signature="7248:7489" ph="select a.app... " />
+            <marker date="1487129102908" expanded="true" signature="13345:13481" ph="select a.*,u... " />
+            <marker date="1487129102908" expanded="true" signature="18405:18535" ph="select apply... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tpl/Admin/goods/view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1665">
@@ -669,10 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,25 +657,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="47" column="38" lean-forward="true" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php">
+    <entry file="file://$PROJECT_DIR$/Tpl/Admin/Apply/record.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="172" column="64" lean-forward="true" selection-start-line="172" selection-start-column="54" selection-end-line="172" selection-end-column="64" />
-          <folding>
-            <marker date="1487129102908" expanded="true" signature="7248:7489" ph="select a.app... " />
-            <marker date="1487129102908" expanded="true" signature="13345:13481" ph="select a.*,u... " />
-            <marker date="1487129102908" expanded="true" signature="18405:18535" ph="select apply... " />
-          </folding>
+        <state relative-caret-position="1260">
+          <caret line="196" column="40" lean-forward="true" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="20" column="74" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyLimitModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="420">
           <caret line="52" column="59" lean-forward="true" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
           <folding>
             <marker date="1487130572760" expanded="true" signature="170:222" ph="select * fro... " />
@@ -709,19 +687,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tpl/Admin/Apply/record.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Model/ApplyModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="196" column="40" lean-forward="true" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tpl/Admin/ApplyLimit/limitList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="74" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
-          <folding />
+        <state relative-caret-position="931">
+          <caret line="172" column="64" lean-forward="false" selection-start-line="172" selection-start-column="54" selection-end-line="172" selection-end-column="64" />
+          <folding>
+            <marker date="1487129102908" expanded="true" signature="7248:7489" ph="select a.app... " />
+            <marker date="1487129102908" expanded="true" signature="13345:13481" ph="select a.*,u... " />
+            <marker date="1487129102908" expanded="true" signature="18405:18535" ph="select apply... " />
+          </folding>
         </state>
       </provider>
     </entry>

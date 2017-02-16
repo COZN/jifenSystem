@@ -51,7 +51,7 @@
 		$.post("{:U('Admin/Roles/edit')}",params,function(data,textStatus){
 			var json = WST.toJson(data);
 			if(json.status=='1'){
-				Plugins.setWaitTipsMsg({ content:'操作成功',timeout:1000,callback:function(){
+				Plugins.setWaitTipsMsg({ content:'操作成功,请刷新页面！',timeout:1000,callback:function(){
 				   location.href="{:U('Admin/Roles/index')}";
 				}});
 			}else{

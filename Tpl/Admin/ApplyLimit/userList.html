@@ -42,7 +42,6 @@
     <div style="float:right">
     <php>if(in_array('fxsx_05',$WST_STAFF['grant'])){</php>
         <a class="btn btn-success glyphicon glyphicon-plus" href="{:U('Admin/ApplyLimit/toEditUser',array('limit_id'=>$applyLimit['id']))}">新增</a>
-        <a class="btn btn-primary" onclick='javascript:location.href="{$referer}"'>返回</a>
     <php>}</php>
     </div>
 </div>
@@ -66,7 +65,7 @@
             </tr>
         </volist>
         <tr>
-            <td colspan='11' align='center'>{$List['pager']}</td>
+            <td colspan='11' align='center'>{$Page['pager']}</td>
         </tr>
         </tbody>
     </table>

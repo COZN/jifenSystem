@@ -49,7 +49,7 @@ class ApplyLimitController extends BaseController{
     //删除返现上限
     public function del(){
         $this->isAjaxLogin();
-        $this->checkPrivelege('fxsx_03');
+        $this->checkAjaxPrivelege('fxsx_03');
         $m = D('ApplyLimit');
         $rs = $m->del();
         $this->ajaxReturn($rs);

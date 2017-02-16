@@ -19,6 +19,7 @@ class ApplyModel extends BaseModel {
         $dataType = (int)I('dataType',0);
         $userModel = M('Users');
         $applyModel = M('Apply');
+        $applyLimitModel = M('ApplyLimit');
         $importNum = 0;
         //黑名单用户
         $blackName = array();
@@ -103,15 +104,12 @@ class ApplyModel extends BaseModel {
                 $data = array();
                 $data['loginName'] = $loginName;
                 $data['createTime'] = $time;
+                $data['limit_id'] = $applyLimitModel->where('is_del = 0 and limit_flag = 1')->getField('id');
                 $userId = $userModel->add($data);
+                $userData['limit_id'] = $data['limit_id'];
             }
             //获取返现上限
-            $applyLimitModel = M('ApplyLimit');
-            if($userData['limit_id'] > 0){
-                $limit_value = $applyLimitModel->where('id = '.$userData['limit_id'].' and is_del = 0 and limit_flag = 0')->getField('limit_value');
-            }else{
-                $limit_value = $applyLimitModel->where('is_del = 0 and limit_flag = 1')->getField('limit_value');
-            }
+            $limit_value = $applyLimitModel->where('id = '.$userData['limit_id'].' and is_del = 0')->getField('limit_value');
             //获取累积提现金额
             $sumCashBack = $applyModel->where('userId = '.$userId.' and activePhase = '.$activePhase)->sum('cashBack');
             $money = ($limit_value-$sumCashBack)>$money?$money:($limit_value-$sumCashBack);
@@ -314,7 +312,7 @@ class ApplyModel extends BaseModel {
     //获取所有商品
     public function getAllGoods(){
         $m = M('GoodsPlatform');
-        $goods = $m->where('isDel = 1')->group('goodsId')->field('goodsName,goodsId')->select();
+        $goods = $m->where('isDel = 1')->group('goodsId')->field('goodsName,goodsId')->order('goods_sort,id asc')->select();
         return $goods;
     }
 
@@ -377,19 +375,17 @@ class ApplyModel extends BaseModel {
             $money += $proportion*$goodsScore;
         }
         //会员操作
+        $applyLimitModel = M('ApplyLimit');
         if(!$userId){
             $data = array();
             $data['loginName'] = $users['loginName'];
             $data['createTime'] = $time;
+            $data['limit_id'] = $applyLimitModel->where('is_del = 0 and limit_flag = 1')->getField('id');
             $userId = $userModel->add($data);
+            $userData['limit_id'] = $data['limit_id'];
         }
         //获取返现上限
-        $applyLimitModel = M('ApplyLimit');
-        if($userData['limit_id'] > 0){
-            $limit_value = $applyLimitModel->where('id = '.$userData['limit_id'].' and is_del = 0 and limit_flag = 0')->getField('limit_value');
-        }else{
-            $limit_value = $applyLimitModel->where('is_del = 0 and limit_flag = 1')->getField('limit_value');
-        }
+        $limit_value = $applyLimitModel->where('id = '.$userData['limit_id'].' and is_del = 0')->getField('limit_value');
         //获取累积提现金额
         $sumCashBack = $applyModel->where('userId = '.$userId.' and activePhase = '.$activePhase)->sum('cashBack');
         $money = ($limit_value-$sumCashBack)>$money?$money:($limit_value-$sumCashBack);

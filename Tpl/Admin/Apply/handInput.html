@@ -120,8 +120,8 @@
          <th width='120'>商品积分<font color='red'>*</font>：</th>
          <td>
          <volist name="goods" id="vo" key="i">
-           <div style="float:left;width:220px;padding:5px;" >
-            <div style="width:110px;float:left;text-align: right;">{$vo.goodsName}：</div>
+           <div style="float:left;width:230px;padding:5px;" >
+            <div style="width:120px;float:left;text-align: right;">{$vo.goodsName}：</div>
             <div style="float:left">
             <input type='text' id='goods_{$vo.goodsId}' style='width:100px;' class="form-control wst-ipt" value="0" onkeypress="return WST.isNumberdoteKey(event)" onkeyup="javascript:WST.isChinese(this,1)" maxLength='10'/>
             </div>
